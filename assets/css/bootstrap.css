@@ -214,6 +214,23 @@ table {
   border-spacing: 0;
 }
 
+header.masthead {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  color: #fff;
+  background-image: url("alteng.png");
+  background-repeat: no-repeat;
+  /* background-attachment: scroll; */
+  /* background-position: center center; */
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  header.masthead {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 @media print {
   * {
     color: #000 !important;
