@@ -228,8 +228,8 @@ header.masthead {
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 150px;
+    padding-bottom: 150px;
   }
 @media print {
   * {
@@ -4504,7 +4504,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-brand {
   float: left;
-  padding: 15px 15px;
+  padding: 10px 10px;
   font-size: 18px;
   line-height: 20px;
 }
@@ -4516,7 +4516,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand {
-    margin-left: -15px;
+    margin-left: -100px;
   }
 }
 

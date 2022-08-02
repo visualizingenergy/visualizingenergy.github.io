@@ -13,7 +13,7 @@ body {
   	background-color: #ffffff;
   	font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     color: #555;
     zoom: 100%;
 
@@ -49,7 +49,7 @@ p {
 
 /* Links */
 a {
-    color: #1abc9c;
+    color: #CC0000;
     word-wrap: break-word;
 
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -91,13 +91,13 @@ a:after {
 }
 
 .navbar-inverse {
-	padding-bottom: 70px;
-	padding-top: 70px;
+	padding-bottom: 35px;
+	padding-top: 35px;
 }
 
 .navbar-inverse {
-	background-color: #1abc9c;
-	border-color: #16a085;
+	background-color: #2D2926;
+	border-color: #000000;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -105,13 +105,14 @@ a:after {
 }
 
 .navbar-inverse .navbar-nav > li > a:hover {
-	color: #222222;
+	color: #CC0000;
 }
 
 .navbar-brand {
 	font-weight: 700;
-	font-size: 20px;
+	font-size: 25px;
 	letter-spacing: 2px;
+  text-align: left;
 }
 
 .navbar-inverse .navbar-brand {
