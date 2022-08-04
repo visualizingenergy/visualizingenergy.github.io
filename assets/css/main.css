@@ -169,14 +169,14 @@ a:after {
 /* +++++ Color Wraps / Blog Page +++++ */
 
 #grey {
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	background-color: #f2f2f2;
 }
 
 #white {
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	background-color: #ffffff;
 }
 
