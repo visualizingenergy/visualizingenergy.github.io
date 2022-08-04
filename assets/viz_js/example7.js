@@ -4,7 +4,7 @@ Highcharts.setOptions({
         thousandsSep: ','
     }
 });
-Highcharts.chart('container', {
+Highcharts.chart('example7', {
 
   chart: {
     type: 'streamgraph',
