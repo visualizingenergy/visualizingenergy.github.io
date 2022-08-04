@@ -49,7 +49,7 @@ p {
 
 /* Links */
 a {
-    color: #2ebad1;
+    color: #CC0000;
     word-wrap: break-word;
 
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -105,14 +105,13 @@ a:after {
 }
 
 .navbar-inverse .navbar-nav > li > a:hover {
-	color: #2ebad1;
+	color: #CC0000;
 }
 
 .navbar-brand {
 	font-weight: 700;
 	font-size: 25px;
 	letter-spacing: 2px;
-  text-align: left;
 }
 
 .navbar-inverse .navbar-brand {
@@ -185,7 +184,7 @@ a:after {
 
 /* Blog Date*/
 bd {
-	font-size: 12px;
+	font-size: 10px;
 	text-transform: uppercase;
 	color: #d2d2d2;
 	font-weight: 700;
@@ -194,7 +193,7 @@ bd {
 /* Blog Author*/
 ba {
 	font-size: 12px;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 }
 
 /* Blog Quote */
