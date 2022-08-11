@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>VisualizingEnergy</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">VISUALIZINGENERGY</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="blog.html">Explore Data Stories</a></li>
+            <li><a href="#">Themes</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+	<!-- +++++ Post +++++ -->
+	<div id="white">
+    <center>
+	    <div class="container">
+        <h1>Who experiences energy insecurity in the United States?</h1>
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<!-- <p><img src="assets/img/user.png" width="50px" height="50px"> <ba>Stanley Stinson</ba></p> -->
+
+          <p><ba>Written by: Cutler Cleveland &nbsp;&nbsp; Visualizations by: Heather Clifford</ba><br>
+          <bd>August 4, 2022</bd></p>
+          <p align="justify">
+            The lack of adequate access to clean, affordable energy services diminishes a person’s quality of life along multiple dimensions. The economic impact is often measured as the energy burden: the percentage of household income that is spent on fuel and electricity. As applied in Europe and the United States, energy burden is typically measured by the total spending on household utility bills for heating, cooling, and other homes energy services. Expenditures on energy for transportation typically are excluded in the calculation of the energy burden.
+            <br><br>
+            A closely related concept is energy insecurity, which refers to the sometimes chronic uncertainty a household faces regarding their capacity to pay utility bills. Such households may not be able to pay their full energy bill, they may receive notice of disconnection, and they may actually  be disconnected from the delivery of fuel or electricity.
+          </p>
+          <h2>What causes or correlates with a high energy burden?</h2>
+          <p align="justify">
+            The root cause of a high energy burden has five dimensions [1]. Location is important because urban communities tend to have higher utility bills compared to urban communities. Housing attributes are important because some homes are very inefficient, and because renters face different challenges then homeowners. Income is obviously important, as is ethnicity and race for numerous historical and cultural reasons. High energy prices increase the likelihood of a high energy burden, but effective public policy can counter some of that problem. Behavioral factors such as lifestyle and knowledge about public support programs also play a role.
+          </p>
+          <script src="https://code.highcharts.com/highcharts.js"></script>
+          <script src="https://code.highcharts.com/highcharts-more.js"></script>
+          <script src="https://code.highcharts.com/modules/exporting.js"></script>
+          <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+          <figure class="highcharts-figure">
+            <div id="container"></div>
+          </figure>
+          <style>
+          .highcharts-figure,
+          .highcharts-data-table table {
+            min-width: 320px;
+            max-width: 800px;
+            height:700px;
+            margin: 1em auto;
+          }
+
+          .highcharts-data-table table {
+            font-family: Verdana, sans-serif;
+            border-collapse: collapse;
+            border: 1px solid #ebebeb;
+            margin: 10px auto;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+          }
+
+          .highcharts-data-table caption {
+            padding: 1em 0;
+            font-size: 1.2em;
+            color: #555;
+          }
+
+          .highcharts-data-table th {
+            font-weight: 600;
+            padding: 0.5em;
+          }
+
+          .highcharts-data-table td,
+          .highcharts-data-table th,
+          .highcharts-data-table caption {
+            padding: 0.5em;
+          }
+
+          .highcharts-data-table thead tr,
+          .highcharts-data-table tr:nth-child(even) {
+            background: #f8f8f8;
+          }
+
+          .highcharts-data-table tr:hover {
+            background: #f1f7ff;
+          }
+          </style>
+          <script>
+          Highcharts.chart('container', {
+            chart: {
+              type: 'packedbubble',
+              height: '100%',
+              spacingBottom: 40,
+              spacingTop: 20,
+              events: {
+                render() {
+                  let chart = this,
+                    credits = chart.credits,
+                    creditsBB = credits.getBBox();
+                  if (chart.customLabel) {
+                // keep label responsive
+                    chart.customLabel.destroy();
+                  }
+                    chart.customLabel = chart.renderer.label('Source: Brown et al. 2020</br>Visualizing Energy | Institute for Global Sustainability | Boston University', 0, creditsBB.y - 20).css(credits.styles).add();
+                }
+              }
+            },
+            legend:{ enabled:false },
+            // },
+            title: {
+              text: 'Causes and correlates of energy insecurity',
+              margin: 40
+            },
+            tooltip: {
+              useHTML: true,
+              pointFormat: '<b>{point.name}:</b>'
+            },
+            plotOptions: {
+              packedbubble: {
+                minSize: '20%',
+                maxSize: '60%',
+                zMin: 0,
+                zMax: 100,
+                layoutAlgorithm: {
+                  gravitationalConstant: 0.05,
+                  splitSeries: true,
+                  seriesInteraction: false,
+                  dragBetweenSeries: true,
+                  parentNodeLimit: true
+                },
+                label: {
+          							enabled: true
+          						},
+                dataLabels: {
+                  enabled: true,
+                  parentNodeFormat: '<span style="font-size: 14px;"><b>{series.name}</b></span>',
+                  format: '{point.name}',
+                  style: {
+                    color: 'black',
+                    textOutline: 'none',
+                    fontWeight: 'normal',
+                    fontSize:11,
+                  }
+                }
+              }
+            },
+            series: [{
+              name: 'Location and geography',
+              data: [
+              {
+                  "value": 100,
+                  "name": "Rural, urban, etc."
+              },
+              {
+                  "value": 100,
+                  "name": "Climate"
+              },
+              {
+                  "value": 100,
+                  "name": "Population"
+              },
+              {
+                  "value": 100,
+                  "name": "Urban form"
+              }]
+            }, {
+              name: 'Housing characteristics',
+              data: [{
+                  "value": 100,
+                  "name": "Building attributes"
+              },
+              {
+                  "value": 100,
+                  "name": "Own/rent"
+              },
+              {
+                  "value": 100,
+                  "name": "Appliances"
+              },
+              {
+                  "value": 100,
+                  "name": "Thermostat"
+              }]
+            }, {
+              name: 'Socioeconomic situation',
+              data: [{
+                  "value": 100,
+                  "name": "Income"
+              },
+              {
+                  "value": 100,
+                  "name": "Ethnicity, race"
+              },
+              {
+                  "value": 100,
+                  "name": "Occupancy"
+              },
+              {
+                  "value": 100,
+                  "name": "Children and elderly"
+              }]
+            }, {
+              name: 'Energy prices and policies',
+              data: [{
+                  "value": 100,
+                  "name": "Energy prices"
+              },
+              {
+                  "value": 100,
+                  "name": "Access to natural gas"
+              },
+              {
+                  "value": 100,
+                  "name": "Public assistance"
+              }]
+            }, {
+              name: 'Behavioral factors',
+              data: [{
+                  "value": 100,
+                  "name": "Knowledge"
+              },
+              {
+                  "value": 100,
+                  "name": "Misplaced incentives"
+              },
+              {
+                  "value": 100,
+                  "name": "Lifestyle"
+              },
+              {
+                  "value": 100,
+                  "name": "Control over bills"
+              }]
+            }],
+          });
+          </script>
+          <br>
+          <h2>What households are burdened by utility bills in the United States?</h2>
+          <p align="justify">
+            In 2020, 34 million U.S. households (27% of households) reported difficulty paying energy bills or reported that they had kept their home at an unsafe temperature because of energy cost concerns [2]. That is a slightly smaller figure than in 2015, partly because many states issued moratoria on utility disconnections during the COVID-19 pandemic.
+          </p>
+        </div>
+        <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~hclifford823/242.embed" height="525" width="100%"></iframe>
+
+        <div class="col-lg-8 col-lg-offset-2">
+          <p align="justify">
+            The impacts of energy insecurity fall along many of the same fault lines of overall social equity: income, race, ethnicity, and the type and tenure of housing. In the United States, low-income households, Black, Hispanic, Native American, renters, and older adult households all have disproportionately higher energy burdens than the national median household. The median energy burden of low income households is about three times higher than their higher income counterparts. Black and Hispanic households are more than twice as likely to report some form of energy insecurity compared to white (non-Hispanic or Latino) households. Households who rent face twice the risk compared to homeowners. Just 1 household in 11 that earns more than $100,000 per year report some form of energy insecurity. More than half of households earning less than $10,000 per year report experiencing energy insecurity.
+            <br><br>
+
+            The hardship of energy insecurity can be alleviated in the short run by expansion of federal government programs such as the Low Income Heat Assistance Program and Weatherization Assistance Program. The fact that 34 million U.S. households still report energy insecurity is sufficient evidence to conclude that such programs are woefully inadequate, even in combination with local and state assistance. At the same time, energy insecurity must be seen as tied to the root causes of all forms of social inequity: a lack of jobs that pay a living wage, racism, access to good schools and healthcare, public policy, a lack of affordable housing, among many others. Reducing inequity in all its manifestations will carry energy security benefits as well.
+          </p>
+          <p style="font-size:10px" align="left">
+
+            1. Brown, Marilyn A., Anmol Soni, Melissa V. Lapsa, Katie Southworth, and Matt Cox. “High Energy Burden and Low-Income Energy Affordability: Conclusions from a Literature Review.” Progress in Energy 2, no. 4 (October 2020): 042003. https://doi.org/10.1088/2516-1083/abb954.
+            <br>2. United States Energy Information Administration, “In 2020, 27% of U.S. Households Had Difficulty Meeting Their Energy Needs.” Accessed August 1, 2022. https://www.eia.gov/todayinenergy/detail.php?id=51979.
+
+          </p>
+
+          <p><bt>TAGS: <a href="#">Wordpress</a> - <a href="#">Web Design</a></bt></p>
+					<hr>
+					<p><a href="blog.html"># Back</a></p>
+				</div>
+
+			</div><!-- /row -->
+	    </div> <!-- /container
+    </center>
+	</div><!-- /white -->
+
+
+
+
+	<!-- +++++ Footer Section +++++ -->
+
+  <div id="footer">
+		<div class="container">
+			<div class="row">
+        <div class="col-lg-4">
+          <h4>Visualizing Energy</h4>
+        </div>
+				<div class="col-lg-4">
+					<h4>Institute for Global Sustainability</h4>
+					<p>
+						Boston University
+            <br>
+            Boston, MA
+					</p>
+				</div><!-- /col-lg-4 -->
+
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+						<a href="#">LinkedIn</a><br/>
+						<a href="#">Twitter</a><br/>
+						<a href="#">Facebook</a>
+					</p>
+				</div><!-- /col-lg-4 -->
+
+
+
+			</div>
+
+		</div>
+	</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
