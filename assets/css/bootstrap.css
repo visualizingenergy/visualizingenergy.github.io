@@ -84,6 +84,7 @@ hr {
        box-sizing: content-box;
 }
 
+
 mark {
   color: #000;
   background: #ff0;
@@ -800,8 +801,8 @@ pre code {
 .container {
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .container:before,
@@ -917,8 +918,8 @@ pre code {
 .col-lg-12 {
   position: relative;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .col-xs-1,
@@ -1139,6 +1140,39 @@ pre code {
 .col-xs-offset-0 {
   margin-left: 0;
 }
+
+.parent {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center;
+}
+.child {
+  display: inline-block;
+  border: 1px solid red;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+}
+
+
+.float-parent-element {
+    width: 50%;
+}
+.float-child-element {
+    float: left;
+    width: 50%;
+}
+.red {
+    background-color: red;
+    margin-left: 50%;
+    height: 100px;
+}
+.yellow {
+    margin-left: 50%;
+    height: 100px;
+    background-color: yellow;
+}
+
 
 @media (min-width: 768px) {
   .col-sm-1,
@@ -1648,6 +1682,19 @@ pre code {
   .col-lg-offset-0 {
     margin-left: 0;
   }
+}
+
+
+.column2 {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row2:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 table {
